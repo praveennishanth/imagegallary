@@ -1,27 +1,19 @@
-/*
- Template Name: vacayhome
- File Name: custom.js
- Author Name: ThemeVault
- Author URI: http://www.themevault.net/
- License URI: http://www.themevault.net/license/
- */
-
-$(document).ready(function () {
-    $(window).scroll(function () {
+$(document).ready(function() {
+    $(window).scroll(function() {
         if ($(this).scrollTop() > 100) {
             $('#back-to-top').fadeIn();
         } else {
             $('#back-to-top').fadeOut();
         }
     });
-    $('#back-to-top').click(function () {
-        $("html, body").animate({scrollTop: 0}, 600);
+    $('#back-to-top').click(function() {
+        $("html, body").animate({ scrollTop: 0 }, 600);
         return false;
     });
 
 });
 
-$(document).ready(function () {
+$(document).ready(function() {
     var myButton = $('#mybutton');
     var userFeed = new Instafeed({
         get: 'user',
@@ -29,9 +21,9 @@ $(document).ready(function () {
         accessToken: '4828631159.1677ed0.3e66d0fb39cc4a8383ddd034121c65dc',
         limit: '6',
         sortBy: 'most-recent',
-        after: function () {
+        after: function() {
             var images = $("#instafeed").find('a');
-            $.each(images, function (index, image) {
+            $.each(images, function(index, image) {
                 var delay = (index * 75) + 'ms';
                 $(image).css('-webkit-animation-delay', delay);
                 $(image).css('-moz-animation-delay', delay);
@@ -46,4 +38,3 @@ $(document).ready(function () {
     });
     userFeed.run();
 });
-
